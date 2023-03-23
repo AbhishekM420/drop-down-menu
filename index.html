@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Down List</title>
+    <script>
+      function favdish(){
+      var dish = document.getElementById("seldish") ;
+      document.getElementById("selected").textContent = dish.options[dish.selectedIndex].text;  //give the selected option to output
+      }
+
+      function showhide(){
+        var Dishitms = document.getElementById("dishitems");
+        if(Dishitms.style.display == "none")
+       { 
+        
+        Dishitms.style.display = "flex";
+        Dishitms.style.flexDirection="column-reverse";
+    }
+        else
+         Dishitms.style.display = "none";
+      }
+    </script> 
+    <style>
+        .dropdown{
+            display: none;
+          position: relative;  
+          display: inline-block;
+        }
+        #dishitems{
+            display: flex;
+            flex-direction: column-reverse;
+            
+    
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+       <b>Select your favourite dish</b>  
+       <select name="selectdish" id="seldish" onchange="favdish()">
+        <option value="none">--None Selected--</option>
+        <option value="chaya">Tea</option>
+        <option value="bajji">Bajji</option>
+        <option value="Vada">Vada</option>
+        <option value="coffee">Coffee</option>
+        <option value="biscuit">Biscuit</option>
+         </select>
+        <output id="selected" ></output>  <!--lets us display the selected one-->
+    </form>
+    
+    <!--Drop down menu using button and div tag-->
+
+    <div class="dropdown">
+
+        <button onclick="showhide( )" class="optionbtn" >Choose Dish</button>
+         <div id="dishitems">
+           <a href="#">Tea</a> 
+           <a href="#">Coffee</a> 
+           <a href="#">Vada</a> 
+           <a href="#">Soup</a> 
+           <a href="#">Bajji</a> 
+         </div>
+    </div>
+
+
+</body>
+</html>
